@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const dbconnection = require('./config/db');
+const routes = require('./routes');
 
 // initialize app
 const app = express();
@@ -21,6 +22,9 @@ if(process.env.NODE_ENV == 'development') {
 // set handlebars templating engine
 app.engine('.hbs', exphbs({ defaultLayout:'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
+
+// routes
+app.use('/', routes);
 
 const PORT = process.env.PORT || 8000;
 
