@@ -1,25 +1,3 @@
   {
-    "version": 2,
-    "name": "storybook",
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@now/node-server"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/.*",
-        "dest": "app.js"
-      }
-    ],
-    "alias": [
-      "storybook"
-    ],
-    "env": {
-      "PORT": "@port",
-      "MONGO_URL": "@mongo_url",
-      "GOOGLE_CLIENT_ID": "@google_client_id",
-      "GOOGLE_CLIENT_SECRET": "@google_client_secret"
-    }
+    "version": 2
   }
