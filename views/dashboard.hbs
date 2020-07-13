@@ -1,1 +1,32 @@
-<h1>DASHBOARD</h1>
+<section class="dashboard-page">
+  <h3>DASHBOARD</h3>
+  <p class="lead">
+    Welcome {{ name }}
+  </p>
+  <div>
+    <a href="/stories/add" class="btn btn-sm btn-info">Add</a>
+  </div>
+  <p>Here are your stories...</p>
+  {{#if stories }}
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+        {{#each stories}}
+          <tr>
+            <td><a href="/stories/{{_id}}">{{title}}</a></td>
+            <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+            <td>{{status}}</td>
+            <td></td>
+          </tr>
+        {{/each}}
+    </table>
+  {{else}}
+    <p>You have not created any stories.</p>
+  {{/if}}
+</section>

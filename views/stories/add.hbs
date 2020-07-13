@@ -1,0 +1,24 @@
+<section class="add-stories-page">
+  <h3>What's on your mind?</h3>
+  <form action="/stories" method="POST">
+    <div class="form-group">
+      <label for="title"></label>
+      <input class="form-control" type="text" name="title" id="title">
+    </div>
+    <div class="form-group">
+      <label for="body"></label>
+      <textarea class="form-control" name="body" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="status"></label>
+      <select class="form-control" name="status" id="status">
+        <option value="public">Public</option>
+        <option value="private">Private</option>
+      </select>
+    </div>
+    <div class="row px-3">
+      <button class="btn btn-success">Publish</button>
+      <a class="btn btn-danger ml-5" href="/dashboard">Cancel</a>
+    </div>
+  </form>
+</section>
